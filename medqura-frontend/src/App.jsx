@@ -19,7 +19,9 @@ git add .
 git commit -m "Initial commit"
 git branch -M main
 git remote add origin https://github.com/YOUR_USERNAME/mediqura.git
-git push -u origin main
+git push -u origin mainSECRET_KEY=your-random-secret-key-here
+DEBUG=False
+ALLOWED_HOSTS=your-project-name.railway.app
       {/* Hero Section */}
       <Hero />
 
