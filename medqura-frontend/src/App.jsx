@@ -13,7 +13,13 @@ export default function MedQuraApp() {
     <div className="bg-white font-sans text-gray-900">
       {/* Header Navigation */}
       <Header />
-
+cd c:\Users\ayush\OneDrive\Desktop\med
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/mediqura.git
+git push -u origin main
       {/* Hero Section */}
       <Hero />
 
