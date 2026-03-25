@@ -1,0 +1,13 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY medqura-frontend/package*.json ./
+RUN npm ci --only=production
+
+COPY medqura-frontend/ .
+RUN npm run build
+
+EXPOSE 5173
+
+CMD ["npm", "run", "preview"]

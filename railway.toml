@@ -1,0 +1,25 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "echo 'This is a monorepo - deploy individual services'"
+healthcheckPath = "/"
+healthcheckTimeout = 300
+
+[[services]]
+name = "mediqura-django"
+source = { path = "mediqura-django" }
+build = { builder = "NIXPACKS" }
+deploy = { startCommand = "gunicorn config.wsgi:application --bind 0.0.0.0:$PORT" }
+
+[[services]]
+name = "mediqura-frontend"
+source = { path = "medqura-frontend" }
+build = { builder = "NIXPACKS" }
+deploy = { startCommand = "npm run preview" }
+
+[[services]]
+name = "mediqura-backend"
+source = { path = "medqura-backend" }
+build = { builder = "NIXPACKS" }
+deploy = { startCommand = "node server.js" }
